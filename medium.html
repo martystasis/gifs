@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .slideshow-container {
+            position: centered;
+            max-width: 500px;
+            height: 500px;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="https://images2.imgbox.com/31/cb/duZRk3ZW_o.gif" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="https://i4.imageban.ru/out/2010/12/12/b130d67a1f0fba4b128881b6c59ca079.gif" alt="Image 7">
+        </div>
+        <div class="slide">
+            <img src="https://images2.imgbox.com/93/8a/M60HNLOJ_o.gif" alt="Image 2">
+        </div>
+        <div class="slide">
+            <img src="https://i1.imageban.ru/out/2011/02/13/34d5c8bdd8e538cc64af469a0772605a.gif" alt="Image 8">
+        </div>
+        <div class="slide">
+            <img src="https://images2.imgbox.com/e8/02/JeVwCpFl_o.gif" alt="Image 3">
+        </div>
+        <div class="slide">
+            <img src="https://i4.imageban.ru/out/2011/02/23/21902a03a78909e745a8a1405e9b58a8.gif" alt="Image 9">
+        </div>
+        <div class="slide">
+            <img src="https://images2.imgbox.com/e4/0c/LuDPZl3x_o.gif" alt="Image 4">
+        </div>
+        <div class="slide">
+            <img src="https://i2.imageban.ru/out/2011/02/24/c6ddebd1d90ef3b24280acba4623937a.gif" alt="Image 10">
+        </div>
+        <div class="slide">
+            <img src="https://images2.imgbox.com/82/a5/u5DzWOpR_o.gif" alt="Image 5">
+        </div>
+        <div class="slide">
+            <img src="https://i4.imageban.ru/out/2011/02/23/ffa88e3bf3c222dea136642380866519.gif" alt="Image 6">
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function showSlides() {
+            const slides = document.querySelectorAll(".slide");
+            slides.forEach((slide) => {
+                slide.style.display = "none";
+            });
+            currentIndex++;
+            if (currentIndex > slides.length) {
+                currentIndex = 1;
+            }
+            slides[currentIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        document.addEventListener("DOMContentLoaded", showSlides);
+    </script>
+</body>
+</html>
